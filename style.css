@@ -5,15 +5,60 @@ body {
 	color: #2b1d0e;
 }
 
+#game {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#choices {
+	position: absolute;
+	bottom: 120px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	text-align: center;
+}
+
+.choice-btn {
+	display: block;
+	width: 100%;
+	max-width: 400px;
+
+	margin: 10px auto;
+	padding: 12px;
+
+	background: #7a4b18;
+	color: white;
+
+	border: none;
+	border-radius: 10px;
+
+	font-size: 18px;
+	cursor: pointer;
+
+	transition: 0.2s;
+}
+
+.choice-btn:hover {
+	background: #a86a2b;
+}
+
 /* BACKGROUND */
 
 #background {
 	position: absolute;
+	top: 0;
+	left: 0;
+
 	width: 100%;
-	height: 100vh;
+	height: 100%;
+
 	background: url("bg/sea.png");
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
 /* CHARACTER */
@@ -23,11 +68,11 @@ body {
 	bottom: 140px;
 	left: 50%;
 	transform: translateX(-50%);
-	height: 420px;
-	filter: drop-shadow(0px 10px 15px black);
-}
 
-#character {
+	height: 100%;
+	max-height: 420px;
+
+	filter: drop-shadow(0px 10px 15px black);
 	animation: characterEnter 0.6s ease;
 }
 
@@ -49,6 +94,7 @@ body {
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
+
 	transform: translateX(-50%);
 
 	width: 85%;
@@ -74,7 +120,7 @@ body {
 	line-height: 1.6;
 }
 
-/* NAME */
+/* NAME PLATE */
 
 .nameplate {
 	position: absolute;
@@ -85,6 +131,7 @@ body {
 	color: white;
 
 	padding: 6px 20px;
+
 	border-radius: 12px;
 
 	font-size: 22px;
@@ -100,6 +147,7 @@ body {
 	bottom: 15px;
 
 	font-size: 28px;
+
 	animation: blink 1s infinite;
 }
 
@@ -112,5 +160,72 @@ body {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+/* ========================= */
+/* TABLET RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px) {
+	#character {
+		height: 35vh;
+		bottom: 160px;
+	}
+
+	.dialogue {
+		width: 90%;
+		padding: 20px;
+	}
+
+	#text {
+		font-size: 20px;
+	}
+
+	.nameplate {
+		font-size: 20px;
+	}
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 600px) {
+	#character {
+		height: 30vh;
+		bottom: 170px;
+	}
+
+	.dialogue {
+		width: 95%;
+		padding: 15px;
+	}
+
+	#text {
+		font-size: 18px;
+	}
+
+	.nameplate {
+		font-size: 18px;
+	}
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 400px) {
+	#character {
+		height: 100%;
+		bottom: 110px;
+	}
+
+	#text {
+		font-size: 16px;
+	}
+
+	.nameplate {
+		font-size: 16px;
 	}
 }
